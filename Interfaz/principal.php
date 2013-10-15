@@ -2,26 +2,34 @@
 <html lang="es">
 <head>
 	<title>EED</title>
-	 <link rel="stylesheet" href="estiloEED.css"/>
 
+	 <link rel="stylesheet" href="estiloprincipal.css">
+<style type="text/css">
+
+ 
+</style>
 </head>
 <body>
- <form action="inicio.php" method="post">
-     <a href="http://www.udg.mx" title="Ir a Universidad De Guadalajara"><img src="logo.jpg" alt="GIF" id="logoUDG"></a>
+<fieldset id="cabecera">
+ <form action="validar.php" method="post">
+     
         <label id="lblusu">USUARIO</label>
 
-        <input title="USUARIO" type="text" name="usuario" id="usu" size="10" maxlength="100" value=""/>
+        <input title="USUARIO" type="text" name="usuario" id="usu" size="10" maxlength="100" value="" required/>
 
         <label id="lblcontra">CONTRASE&Ntilde;A</label>
 
-        <input title="CONTRASE&Ntilde;A" type="password" name="contra" id="contra" size="10" maxlength="100"/>
+        <input title="CONTRASE&Ntilde;A" type="password" name="contra" id="contra" size="10" maxlength="100" required/>
 
         <input type="submit" id="btningresar" title="Pulsa para ingresar" value="INGRESAR">
-<a href="http://www.cutonala.udg.mx" title="Ir a CUTonal&aacute;">
+        </form>
+        </fieldset>
+        <fieldset>
+        <a href="http://www.udg.mx" title="Ir a Universidad De Guadalajara"><img src="logo.jpg" alt="GIF" id="logoUDG"></a>
+       <a href="http://www.cutonala.udg.mx" title="Ir a CUTonal&aacute;">
   <img src="dummylogo.png" alt="GIF" id="logocutonala">
 </a>
-
-        </form>
-	
+        <img src="cutonala1.jpg" id="imagencentral">
+	</fieldset>
 </body>
 </html>
