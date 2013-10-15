@@ -1,0 +1,40 @@
+#cabecera{
+	background: #ffffff;
+}
+body{
+	background: #eeeeee;
+}
+#central{
+	background-color: #ffffff;
+	margin-top: 2%;
+}
+#lblusu{
+	width: 40%;
+	margin-left: 5%;
+	margin-top: -3%;
+	color: #6cb853;
+}
+
+#lblcontra{
+	color: #6cb853;
+}
+
+#logocutonala{
+	width: 15%;
+	margin-left: 5%;
+}
+#btningresar{
+	background-color: #80ca67;
+	color: white;
+}
+#logoeed{
+	width: 100%;
+	margin-left: 1%;
+}
+#imagencentral{
+	width: 100%;
+}
+ [required]{
+    border-color: blue;
+    box-shadow: 0px 0px 5px blue;
+  }
