@@ -1,0 +1,42 @@
+create database cutonala;
+	create table Sede(id int(10) not null Auto_increment primary key,
+		              Nombre varchar(50) not null, Ubicacion varchar(150) not null);
+
+	create table Licenciatura(id int(10) not null Auto_increment primary key,
+		                      Nombre varchar(50) not null, id_sede int(10) not null,
+		                      FOREIGN KEY (id_sede) REFERENCES Sede(id)) ENGINE=INNODB;
+
+	create table Grupo(id int(10) not null Auto_increment primary key, Nombre varchar(5) not null,
+		               Turno varchar(5) not null, Aula varchar(5) not null, id_Licenciatura int(10) not null,
+		               FOREIGN KEY (id_Licenciatura) REFERENCES Licenciatura(id)) ENGINE=INNODB;
+
+	create table Estudiante(id int(10) not null Auto_increment primary key,
+		                    Codigo int(10) not null, Nombre varchar(30) not null, 
+		                    Ap_Paterno varchar(20) not null, Ap_Materno varchar(20) not null,
+		                    id_Grupo int(10) not null, id_Licenciatura int(10) not null,
+		                    FOREIGN KEY (id_Grupo) REFERENCES Grupo(id),
+		                    FOREIGN KEY (id_Licenciatura) REFERENCES Licenciatura (id)) ENGINE=INNODB;
+        create table Urnas(id_Alumno int(10) not null, voto varchar(3) not null, color varchar(15) not null, FOREIGN 
+                                     KEY (id_Alumno) REFERENCES Alumno(id)) ENGINE=INNODB;
+        create table Mesas(id_Licenciatura varchar(30) not null, Num_Mesa int(10), FOREIGN KEY (id_Licenciatura) 
+                                    REFERENCES Licenciatura(id)) ENGINE=INNODB;
+
+       
+insert into Sede(NombreSede, Ubicacion) 
+	values('Casa de la Cultura','www.google.com'),('Casa de la Cultura II','www.google'), ('Sillitas', 'www.google.com'),
+	      ('Santa Paula', 'www.google.com');
+insert into Licenciatura(NombreLicenciatura, id_sede)
+	values('Lic. Salud Publica', '2'), ('Lic. Medico, Cirujano y Partero', '2'), ('Ing. Nanotecnologia', '1'),
+	      ('Ing. Energia', '1'), ('Ing. Ciencias Computacionales', '1'), ('Lic. Historia del Arte', '1'),
+	      ('Lic. Gerontologia', '2'), ('Lic. Estudios Liberales', '2'), ('Lic. Diseño de Artesanias', '4'),
+	      ('Lic. Contaduria Publica', '3'), ('Lic. Administracion de Negocios', '3'), ('Lic. Abogado', '3');
+insert into Grupo(NombreGrupo, Aula, id_Licenciatura, Turno)
+	values('1ero', '6', '5', 'Matutino'), ('1ero', '6', '5', 'Vespertino'), ('2do', '5', '5', 'Matutino'),
+	      ('2do', '5', '5', 'Vespertino'), ('3ero', '4', '5', 'Vespertino'), ('3ero', '8', '5', 'Vespertino'),
+	      ('4to', '8', '5', 'Matutino'), ('4to', '4', '5', 'Matutino');
+
+
+insert into Estudiante(Codigo, NombreEstudiante, ApellidoPaterno, ApellidoMaterno, id_Grupo, id_Licenciatura)
+	values('207630719', 'Joel Emmanuel', 'Valdivia', 'Ramirez', 7, 5);
+insert into Urnas(id_Alumno, voto, color) VALUES ('1','si','rojo');
+insert into Mesas(id_Licenciatura, Num_Mesa) VALUES ('1','2');
